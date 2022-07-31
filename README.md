@@ -13,11 +13,20 @@ My Moviz est une application web qui propose une liste de films, avec les derni�
 ## USAGE
 
 ### Back-end
+
 Installer les modules définis dans `package.json` par `node package manager (npm)`
 
 ```node
 npm install
 ```
+
+Créer le fichier des variables d'environnement `.env` à la racine du projet et les donner des valeurs pour votre environnement de développement
+
+- `DB_LOGIN`
+- `DB_PWD`
+- `DB_HOSTNAME`
+- `DB_NAME`
+- `API_TOKEN`
 
 Démarrer le serveur en local
 

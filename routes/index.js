@@ -1,3 +1,4 @@
+require("dotenv").config();
 var express = require("express");
 var router = express.Router();
 var request = require("sync-request"); // importer
@@ -40,7 +41,7 @@ router.get("/new-movies", function (req, res, next) {
   // exemple d’une requête vers un web service
   let requete = request(
     "GET",
-    "https://api.themoviedb.org/3/discover/movie?api_key=cddbc2873ac002f1c49859b1ff387ee1&language=fr-FR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate"
+    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_TOKEN}&language=fr-FR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate`
   );
   // transformer le résultat en JSON vers object
   let resultWS = JSON.parse(requete.body);
